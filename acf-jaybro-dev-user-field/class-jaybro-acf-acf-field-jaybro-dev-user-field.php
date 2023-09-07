@@ -8,9 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * PREFIX_acf_field_FIELD_NAME class.
+ * jaybro_acf_acf_field_jaybro_dev_user_field class.
  */
-class PREFIX_acf_field_FIELD_NAME extends \acf_field {
+class jaybro_acf_acf_field_jaybro_dev_user_field extends \acf_field {
 	/**
 	 * Controls field type visibilty in REST requests.
 	 *
@@ -34,14 +34,14 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		 *
 		 * No spaces. Underscores allowed.
 		 */
-		$this->name = 'FIELD_NAME';
+		$this->name = 'jaybro_dev_user_field';
 
 		/**
 		 * Field type label.
 		 *
 		 * For public-facing UI. May contain spaces.
 		 */
-		$this->label = __( 'FIELD_LABEL', 'TEXTDOMAIN' );
+		$this->label = __( 'Jaybro Dev User Field', 'jaybro-dev' );
 
 		/**
 		 * The category the field appears within in the field type picker.
@@ -53,21 +53,21 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		 *
 		 * For field descriptions. May contain spaces.
 		 */
-		$this->description = __( 'FIELD_DESCRIPTION', 'TEXTDOMAIN' );
+		$this->description = __( 'Dev Custom Field', 'jaybro-dev' );
 
 		/**
 		 * Field type Doc URL.
 		 *
 		 * For linking to a documentation page. Displayed in the field picker modal.
 		 */
-		$this->doc_url = 'FIELD_DOC_URL';
+		$this->doc_url = 'n/a';
 
 		/**
 		 * Field type Tutorial URL.
 		 *
 		 * For linking to a tutorial resource. Displayed in the field picker modal.
 		 */
-		$this->tutorial_url = 'FIELD_TUTORIAL_URL';
+		$this->tutorial_url = 'n/a';
 
 		/**
 		 * Defaults for your custom user-facing settings for this field type.
@@ -82,15 +82,15 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		 * Allows JS strings to be translated in PHP and loaded in JS via:
 		 *
 		 * ```js
-		 * const errorMessage = acf._e("FIELD_NAME", "error");
+		 * const errorMessage = acf._e("jaybro_dev_user_field", "error");
 		 * ```
 		 */
 		$this->l10n = array(
-			'error'	=> __( 'Error! Please enter a higher value', 'TEXTDOMAIN' ),
+			'error'	=> __( 'Error! Please enter a higher value', 'jaybro-dev' ),
 		);
 
 		$this->env = array(
-			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-FIELD-NAME directory.
+			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-jaybro-dev-user-field directory.
 			'version' => '1.0', // Replace this with your theme or plugin version constant.
 		);
 
@@ -120,8 +120,8 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		acf_render_field_setting(
 			$field,
 			array(
-				'label'			=> __( 'Font Size','TEXTDOMAIN' ),
-				'instructions'	=> __( 'Customise the input font size','TEXTDOMAIN' ),
+				'label'			=> __( 'Font Size','jaybro-dev' ),
+				'instructions'	=> __( 'Customise the input font size','jaybro-dev' ),
 				'type'			=> 'number',
 				'name'			=> 'font_size',
 				'append'		=> 'px',
@@ -168,20 +168,20 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		$version = $this->env['version'];
 
 		wp_register_script(
-			'PREFIX-FIELD-NAME',
+			'jaybro_acf-jaybro-dev-user-field',
 			"{$url}assets/js/field.js",
 			array( 'acf-input' ),
 			$version
 		);
 
 		wp_register_style(
-			'PREFIX-FIELD-NAME',
+			'jaybro_acf-jaybro-dev-user-field',
 			"{$url}assets/css/field.css",
 			array( 'acf-input' ),
 			$version
 		);
 
-		wp_enqueue_script( 'PREFIX-FIELD-NAME' );
-		wp_enqueue_style( 'PREFIX-FIELD-NAME' );
+		wp_enqueue_script( 'jaybro_acf-jaybro-dev-user-field' );
+		wp_enqueue_style( 'jaybro_acf-jaybro-dev-user-field' );
 	}
 }
